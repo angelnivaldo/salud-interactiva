@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- CONFIGURACIÓN DE CONTACTO
+       Para cambiar el destinatario, edita únicamente el correo entre comillas.
+       No escribas aquí contraseñas ni credenciales. -->
+  <script>
+    const CORREO_CONTACTO = "angelnivaldo@yahoo.com";
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Salud Interactiva. Información sencilla sobre el Alzheimer, sus primeras señales y las noticias sobre tratamientos y medicamentos.">
+  <meta name="theme-color" content="#164e8c">
+  <title>Salud Interactiva · Memoria, salud y compañía</title>
+  <!-- Las dos imágenes se encuentran junto a este archivo HTML. -->
+  <link rel="icon" type="image/png" href="Icono_SI.png">
+  <link rel="apple-touch-icon" href="Icono_SI.png">
+  <style>
+    /* COLORES Y DISEÑO: puedes modificar esta sección para personalizar la página. */
+    :root{--fondo:#eaf4fc;--fondo-suave:#f5faff;--azul:#185a9d;--azul-oscuro:#153b63;--texto:#365574;--borde:#c5dbef;--blanco:#fff;--secundario:#516b82;font-size:17px;scroll-behavior:smooth;scroll-padding-top:25px}
+    *{box-sizing:border-box}body{margin:0;background:var(--fondo);color:var(--texto);font-family:Arial,Helvetica,sans-serif;line-height:1.65}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:var(--azul);text-underline-offset:4px}a:hover{text-decoration-thickness:2px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a34319;outline-offset:5px}h1,h2,h3,p,figure{margin:0}h1,h2,h3{color:var(--azul-oscuro)}h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;line-height:1.15;letter-spacing:-1px}h1{font-size:clamp(2.45rem,4.4vw,3.7rem)}h2{font-size:clamp(1.75rem,3vw,2.4rem)}h3{font-size:1.05rem;line-height:1.45}.contenedor{width:calc(100% - 64px);max-width:1140px;margin:0 auto}.cabecera{background:#dbeefa;border-bottom:1px solid var(--borde)}.barra{min-height:104px;display:flex;gap:25px;align-items:center;justify-content:space-between}.marca{display:flex;gap:15px;align-items:center;text-decoration:none;color:var(--azul-oscuro)}.marca img{width:72px;height:72px;object-fit:contain}.marca strong{font-size:1.38rem;letter-spacing:-.6px}.marca small{display:block;font-size:.68rem;color:var(--texto);letter-spacing:.4px}.navegacion{display:flex;gap:26px;align-items:center}.navegacion a{font-size:.85rem;font-weight:600;text-decoration:none}.navegacion a:hover{text-decoration:underline}.letra{border:1px solid #a5c4df;background:transparent;color:var(--azul-oscuro);border-radius:50%;width:44px;height:44px;flex-shrink:0;font-family:Georgia,serif}.letra[aria-pressed=true]{background:var(--azul-oscuro);color:white}.portada{display:grid;grid-template-columns:1fr 1.04fr;gap:52px;align-items:center;padding:54px 0 48px}.etiqueta{color:var(--azul);text-transform:uppercase;font-size:.67rem;letter-spacing:1.65px;font-weight:700;margin-bottom:17px}.portada h1 em{font-style:normal;color:var(--azul)}.intro{margin-top:23px;font-size:1rem;max-width:460px;line-height:1.8}.acciones{display:flex;align-items:center;flex-wrap:wrap;gap:23px;margin-top:28px}.boton{display:inline-flex;align-items:center;justify-content:center;gap:17px;padding:13px 21px;border-radius:6px;border:1px solid var(--azul);background:var(--azul);color:white;text-decoration:none;font-size:.84rem;font-weight:600;min-height:48px}.boton:hover{background:#124b84;border-color:#124b84;text-decoration:none}.enlace{font-size:.84rem;font-weight:600;text-decoration:none}.enlace:hover{text-decoration:underline}.foto img{width:100%;height:auto;display:block;aspect-ratio:640/448;border-radius:14px;box-shadow:0 10px 35px #153b6312}.foto figcaption{text-align:center;font-size:.73rem;margin-top:13px;color:var(--secundario)}.recordatorio{display:flex;gap:16px;align-items:center;background:#dceefb;border-left:3px solid #4381bb;padding:16px 21px;font-size:.86rem;border-radius:0 6px 6px 0;margin-bottom:46px}.recordatorio strong{color:var(--azul-oscuro)}.noticias{background:var(--blanco);border:1px solid var(--borde);border-radius:12px;padding:32px;margin-bottom:44px;box-shadow:0 6px 22px #244c7605}.titular-seccion{display:flex;align-items:center;justify-content:space-between;gap:25px}.titular-seccion .etiqueta{margin-bottom:8px}.titular-seccion h2{font-size:2rem}.actualizar{white-space:nowrap;border:1px solid #aacbe6;background:var(--fondo-suave);color:var(--azul);font-weight:600;padding:10px 16px;border-radius:6px;font-size:.8rem;min-height:44px}.actualizar:hover{background:#deeffb}.actualizar:disabled{opacity:.65;cursor:wait}.noticias-intro{font-size:.9rem;margin:16px 0 15px;max-width:740px}.estado{font-size:.74rem;color:var(--secundario);display:flex;gap:9px;align-items:baseline;margin-bottom:6px;min-height:1.5em}.estado:before{content:'';width:7px;height:7px;border-radius:50%;background:#3775ae;display:inline-block;flex-shrink:0}.estado[data-state=error]:before{background:#a46129}.estado[data-state=loading]:before{background:#7a96ae}.lista-noticias{list-style:none;margin:6px 0 0;padding:0}.noticia{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:20px;border-top:1px solid #dce8f2;padding:19px 0}.noticia:first-child{margin-top:16px}.noticia h3{font-size:1rem;font-weight:600;line-height:1.5}.noticia h3 a{color:var(--azul-oscuro);text-decoration:none}.noticia h3 a:hover{text-decoration:underline}.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.71rem;color:var(--secundario);margin-bottom:6px}.nueva{background:#e0f0fd;border:1px solid #bbdaf2;color:#195786;padding:0 7px;border-radius:3px;font-size:.62rem;font-weight:700}.flecha{color:var(--azul);font-size:1.1rem}.vacio{padding:24px 0 16px;font-size:.87rem}.pie-noticias{border-top:1px solid #dce8f2;padding-top:18px;margin-top:4px;display:flex;justify-content:space-between;gap:20px;align-items:center}.pie-noticias>p{font-size:.7rem;color:var(--secundario);max-width:570px}.pie-noticias>a{white-space:nowrap}.como-funciona{font-size:.74rem;margin-top:17px;color:var(--secundario)}summary{cursor:pointer}.como-funciona summary{font-size:.74rem;width:fit-content}.como-funciona p{padding-top:10px;max-width:900px}.esencial{padding:0 0 45px}.esencial-cabecera{margin-bottom:24px}.esencial-cabecera p{margin-top:12px;font-size:.94rem}.guias{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.guia{border:1px solid var(--borde);border-radius:9px;background:#f5faff;padding:0 24px}.guia summary{list-style:none;display:flex;gap:18px;align-items:center;justify-content:space-between;font-size:1rem;font-weight:600;color:var(--azul-oscuro);min-height:84px;padding:20px 0}.guia summary::-webkit-details-marker{display:none}.guia summary span{font-size:1.3rem;font-weight:400}.guia[open] summary span{transform:rotate(45deg)}.guia ul,.guia ol{margin:0;padding:0 0 0 21px;font-size:.88rem}.guia li{margin-bottom:10px}.guia .contenido-guia{padding-bottom:22px}.guia .contenido-guia>p{font-size:.8rem;margin-top:18px}.guia .fuente{font-size:.74rem}.orientacion{font-size:.75rem;margin:20px 0 0;color:var(--secundario)}.recursos{border-top:1px solid var(--borde);padding:22px 0 32px;display:flex;justify-content:space-between;gap:24px;align-items:center}.recursos p{font-size:.78rem;max-width:600px}.recursos a{font-size:.8rem;white-space:nowrap}footer{background:#d6eafa;border-top:1px solid #bcd6ed;color:var(--azul-oscuro);padding:23px 0}.pie{display:flex;align-items:center;justify-content:space-between;gap:25px}.pie strong{font-size:.93rem}.pie p{font-size:.7rem;margin-top:5px;color:var(--texto)}.pie>a{font-size:.74rem;white-space:nowrap}.saltar{position:absolute;top:-100px;left:10px;background:var(--azul-oscuro);color:white;padding:12px;z-index:50}.saltar:focus{top:10px}.sin-js{padding:18px;border:1px solid var(--borde);font-size:.85rem}.letra-grande{font-size:20px}[hidden]{display:none!important}
+    @media(max-width:950px){.contenedor{width:calc(100% - 44px)}.portada{gap:30px}.navegacion{gap:17px}.marca strong{font-size:1.2rem}.marca img{width:63px;height:63px}.marca{gap:10px}.navegacion a{font-size:.75rem}.letra-grande .navegacion a{font-size:.65rem}.letra-grande .portada{grid-template-columns:1fr}.letra-grande .foto{max-width:650px}.pie-noticias{align-items:flex-start;flex-direction:column;gap:12px}}
+    @media(max-width:700px){.barra{min-height:90px;flex-wrap:wrap;padding:12px 0;gap:6px 14px}.marca{flex:1}.marca img{width:59px;height:59px}.marca strong{font-size:1.14rem}.marca small{font-size:.62rem}.navegacion{order:3;width:100%;justify-content:center;gap:36px;padding:4px 0 0}.navegacion a{font-size:.81rem}.portada{grid-template-columns:1fr;padding-top:34px;gap:30px;padding-bottom:28px}.portada h1{font-size:2.8rem}.intro{font-size:.98rem;max-width:none;margin-top:19px}.acciones{gap:22px;margin-top:23px}.foto{max-width:640px}.foto figcaption{font-size:.69rem}.recordatorio{margin-bottom:30px;font-size:.8rem;padding:15px 18px}.noticias{padding:25px 22px;margin-bottom:32px}.titular-seccion{align-items:flex-start;gap:17px}.titular-seccion h2{font-size:1.8rem}.actualizar{font-size:.71rem;padding:8px 10px}.noticias-intro{font-size:.86rem}.noticia{padding-block:17px;gap:12px}.noticia h3{font-size:.95rem}.meta{font-size:.68rem}.guias{grid-template-columns:1fr;gap:13px}.guia summary{min-height:73px;font-size:.91rem}.guia{padding-inline:20px}.esencial{padding-bottom:32px}.esencial h2{font-size:1.9rem}.esencial-cabecera p{font-size:.86rem}.recursos{flex-direction:column;align-items:flex-start;gap:13px}.pie{align-items:flex-start}.letra-grande .marca strong{font-size:1rem}.letra-grande .marca small{font-size:.54rem}.letra-grande .navegacion a{font-size:.72rem}.letra-grande .portada h1{font-size:2.45rem}.letra-grande .titular-seccion{flex-wrap:wrap}.letra-grande .actualizar{font-size:.72rem}.letra-grande .pie{flex-wrap:wrap}}
+    @media(max-width:390px){.contenedor{width:calc(100% - 32px)}.portada h1{font-size:2.5rem}.titular-seccion h2{font-size:1.55rem}.marca strong{font-size:1.04rem}.noticias{padding-inline:18px}.acciones{gap:17px}.acciones .enlace{font-size:.77rem}.boton{padding-inline:16px}.navegacion{gap:30px}}
+    @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}}
+    @media print{body{background:white}.navegacion,.letra,.acciones,.actualizar,.como-funciona,.saltar,footer{display:none}.contenedor{width:100%}.noticias,.guia{break-inside:avoid}.portada{padding-block:20px}.foto{max-width:350px}.noticia{break-inside:avoid}a{color:#153b63}}
+      /* VERSIÓN 3: portada breve y actualidad en primer plano. */
+    .barra{min-height:112px;gap:24px}.marca strong{font-size:1.4rem}.marca small{font-family:Georgia,serif;font-size:.9rem;letter-spacing:0;line-height:1.4;margin-top:3px;max-width:470px}.marca img{width:78px;height:78px}.navegacion{margin-left:auto}
+    .portada{grid-template-columns:minmax(0,1fr) 285px;gap:50px;padding:26px 0 29px}.portada .etiqueta{margin-bottom:9px}.portada h1{font-size:2.35rem}.intro{max-width:650px;font-size:.94rem;line-height:1.65;margin-top:12px}.acciones{margin-top:14px;gap:22px}.boton{padding:8px 15px;min-height:42px}.foto img{border-radius:10px;box-shadow:none}.foto figcaption{font-size:.65rem;margin-top:5px}
+    .noticias{padding:27px 29px 22px;border-top:4px solid #3173b0;box-shadow:0 10px 28px #244c7608;margin-bottom:34px}.titular-seccion h2{font-size:2.2rem}.noticias-intro{margin:10px 0 6px}.estado{margin:0 0 18px;font-size:.7rem}.lista-noticias{display:grid;grid-template-columns:1.05fr 1fr;gap:18px 25px;margin:0}.noticia{display:flex;align-items:stretch;flex-direction:row;gap:17px;border:0;padding:0;min-width:0}.noticia:first-child{grid-row:span 2;display:block;margin:0;border-right:1px solid var(--borde);padding-right:25px}.noticia-figura{flex:0 0 40%;margin:0;min-width:0}.noticia-foto{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:7px;background:#dceafa}.noticia:first-child .noticia-foto{aspect-ratio:16/8.5;object-fit:cover}.noticia-figura figcaption{font-size:.56rem;line-height:1.3;color:var(--secundario);margin:4px 0 8px}.noticia-contenido{flex:1;min-width:0}.noticia h3{font-size:.95rem;line-height:1.45;overflow-wrap:anywhere}.noticia:first-child h3{font-family:Georgia,serif;font-size:1.5rem;font-weight:400;line-height:1.25}.noticia .meta{font-size:.65rem;gap:5px;margin-bottom:7px}.leer-noticia{display:inline-block;margin-top:10px;font-size:.7rem;font-weight:600;text-decoration:none}.imagen-neutra{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;background:#e0edf7;color:var(--azul);font:1.1rem Georgia,serif;border-radius:7px}.noticia:first-child .imagen-neutra{aspect-ratio:16/8.5}.nueva{font-size:.58rem}
+    .otros-medios{margin-top:23px;border-top:1px solid var(--borde);padding-top:15px}.otros-medios summary{color:var(--azul-oscuro);font-size:.84rem;font-weight:600}.otros-medios .lista-otros{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:15px 27px}.titular-otro{padding-bottom:13px;border-bottom:1px solid #dce8f2}.titular-otro h3{font-size:.86rem;font-weight:600}.titular-otro h3 a{text-decoration:none;color:var(--azul-oscuro)}.titular-otro h3 a:hover{text-decoration:underline}.fecha-otros{font-size:.67rem;margin-top:7px}.pie-noticias{margin-top:19px;padding-top:15px}.pie-noticias>p{font-size:.67rem;max-width:650px}.como-funciona{margin-top:12px}.recordatorio{margin-bottom:29px}
+    @media(max-width:950px){.barra{gap:15px}.marca small{max-width:330px;font-size:.78rem}.marca strong{font-size:1.2rem}.marca img{width:68px;height:68px}.portada{grid-template-columns:minmax(0,1fr) 240px;gap:28px}.portada h1{font-size:2rem}.lista-noticias{grid-template-columns:1fr 1fr;gap:21px}.noticia{display:block}.noticia:first-child{padding-right:21px}.noticia:first-child h3{font-size:1.3rem}.noticia-foto{max-height:155px}.noticia:first-child .noticia-foto{max-height:none}.letra-grande .lista-noticias{grid-template-columns:1fr}.letra-grande .noticia:first-child{border-right:0;padding-right:0}.letra-grande .noticia{display:grid;grid-template-columns:1fr 1fr;gap:22px}.letra-grande .marca small{font-size:.72rem}}
+    @media(max-width:700px){.barra{padding:12px 0;gap:4px 12px}.marca img{width:57px;height:57px}.marca strong{font-size:1.1rem}.marca small{font-size:.72rem;max-width:240px}.navegacion{margin-left:0;padding-top:9px}.portada{grid-template-columns:minmax(0,1fr) 125px;gap:16px;padding:23px 0}.portada h1{font-size:1.8rem}.portada .etiqueta{font-size:.55rem;letter-spacing:1px}.intro{font-size:.85rem}.portada .intro,.portada .acciones{grid-column:1/-1}.portada>div{display:contents}.portada h1,.portada .etiqueta{grid-column:1;grid-row:auto}.foto{grid-column:2;grid-row:1/3;align-self:center}.foto figcaption{display:none}.portada .etiqueta{margin:0}.intro,.acciones{margin-top:0}.acciones .boton{display:none}.acciones{display:block}.acciones .enlace{font-size:.79rem}.noticias{padding:20px 19px;margin-bottom:27px}.titular-seccion h2{font-size:1.75rem}.titular-seccion .etiqueta{font-size:.58rem}.titular-seccion{flex-wrap:wrap;gap:11px}.actualizar{padding:7px 10px;min-height:39px}.noticias-intro{font-size:.8rem}.lista-noticias{grid-template-columns:1fr;gap:20px}.noticia:first-child{padding:0;border:0;grid-row:auto}.noticia:first-child h3{font-size:1.35rem}.noticia{display:grid;grid-template-columns:110px 1fr;gap:14px}.noticia:not(:first-child){border-top:1px solid var(--borde);padding-top:19px}.noticia h3{font-size:.88rem}.noticia:first-child .noticia-foto{max-height:none;aspect-ratio:16/9}.noticia .meta{font-size:.61rem}.noticia-foto{aspect-ratio:1;object-fit:cover}.noticia-figura figcaption{font-size:.51rem}.otros-medios .lista-otros{grid-template-columns:1fr}.pie-noticias>p{font-size:.65rem}.recordatorio{font-size:.78rem}.letra-grande .portada{grid-template-columns:1fr 110px}.letra-grande .portada h1{font-size:1.7rem}.letra-grande .noticia{display:block}.letra-grande .noticia-foto{aspect-ratio:16/9;max-height:none}.letra-grande .marca small{font-size:.64rem}}
+    @media(max-width:390px){.marca small{font-size:.68rem;max-width:200px}.marca strong{font-size:1rem}.marca img{width:50px;height:50px}.portada{grid-template-columns:minmax(0,1fr) 112px;gap:12px}.portada h1{font-size:1.6rem}.noticias{padding-inline:16px}.noticia{grid-template-columns:90px 1fr;gap:12px}}
+
+    /* CONTACTO: ventana de correo, con la misma paleta azul de la página. */
+    .abrir-contacto{border:1px solid #a5c4df;background:#eff8ff;color:var(--azul);border-radius:6px;padding:8px 14px;font-size:.82rem;font-weight:600;min-height:42px}.abrir-contacto:hover{background:white}.navegacion{gap:20px}.pie-enlaces{display:flex;align-items:center;gap:24px}.pie-enlaces a{font-size:.74rem;white-space:nowrap}
+    body.contacto-abierto{overflow:hidden}.contacto{width:min(560px,calc(100% - 32px));max-height:calc(100dvh - 36px);max-height:min(90vh,850px);overflow-y:auto;padding:27px 30px 23px;border:1px solid var(--borde);border-radius:14px;color:var(--texto);background:#f5faff;box-shadow:0 24px 100px #0c2c5566}.contacto::backdrop{background:#123c63a6}.contacto-encabezado{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.contacto .etiqueta{margin-bottom:7px}.contacto h2{font-size:2.15rem}.cerrar-contacto{border:1px solid #c5dbef;border-radius:50%;background:#e5f2fc;color:var(--azul-oscuro);width:40px;height:40px;flex-shrink:0;font-size:1.5rem;line-height:1}.cerrar-contacto:hover{background:#d6eafa}.contacto-intro{font-size:.9rem;margin-top:14px;line-height:1.6}.destinatario{font-size:.78rem;margin:9px 0 19px;overflow-wrap:anywhere}.destinatario a{font-weight:600}.contacto label{display:block;font-size:.81rem;font-weight:600;color:var(--azul-oscuro);margin:13px 0 5px}.contacto label span{font-weight:400;color:var(--secundario)}.contacto input,.contacto textarea{width:100%;min-width:0;box-sizing:border-box;border:1px solid #a8c7e2;border-radius:6px;background:white;color:var(--azul-oscuro);padding:10px 12px;font:inherit;font-size:1rem;line-height:1.5}.contacto textarea{resize:vertical;min-height:112px}.contacto input::placeholder,.contacto textarea::placeholder{color:#677d91;opacity:1;font-size:.84rem}.contacto input:focus-visible,.contacto textarea:focus-visible{outline:3px solid #a34319;outline-offset:2px}.contacto-explicacion,.contacto-ayuda{font-size:.73rem;line-height:1.55}.contacto-explicacion{margin-top:11px}.contacto-acciones{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-top:18px}.copiar-contacto{font-size:.8rem;background:transparent;color:var(--azul);padding:9px 0;border:0;text-decoration:underline;text-underline-offset:4px}.contacto-estado{font-size:.77rem;color:var(--azul-oscuro);margin-top:12px}.contacto-estado:empty{display:none}.contacto-ayuda{border-top:1px solid var(--borde);margin-top:17px;padding-top:12px}.contacto button:disabled{opacity:.6;cursor:default}
+    @media(max-width:950px){.navegacion{gap:14px}.abrir-contacto{padding:7px 11px;font-size:.75rem}.marca small{max-width:290px}}
+    @media(max-width:700px){.navegacion{justify-content:space-between;gap:12px}.navegacion .abrir-contacto{font-size:.76rem;min-height:36px;padding:5px 12px}.contacto{padding:22px;width:calc(100% - 24px);max-height:90dvh}.contacto h2{font-size:1.9rem}.contacto-intro{font-size:.85rem}.contacto-acciones{gap:10px 17px}.contacto-acciones .boton{font-size:.79rem;padding:11px 15px}.pie{flex-wrap:wrap}.pie-enlaces{gap:20px}}
+    @media print{.abrir-contacto,.contacto{display:none!important}}
+
+  </style>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <!-- CABECERA -->
+  <header class="cabecera" id="inicio"><div class="contenedor barra">
+    <a class="marca" href="#inicio" aria-label="Salud Interactiva, inicio"><img src="Icono_SI.png" alt="" width="512" height="512"><span><strong>Salud Interactiva</strong><small>Cuidar la memoria, preservar la independencia.</small></span></a>
+    <nav class="navegacion" aria-label="Navegación principal"><a href="#noticias">Noticias</a><a href="#primeros-pasos">Primeros pasos</a><button class="abrir-contacto" type="button" data-abrir-contacto aria-haspopup="dialog" aria-controls="dialogo-contacto">Contactar</button></nav>
+    <button class="letra" id="letra" type="button" aria-label="Aumentar tamaño de letra" aria-pressed="false">A+</button>
+  </div></header>
+  <main class="contenedor" id="contenido">
+    <!-- PORTADA: cambia aquí el título y la presentación. -->
+    <section class="portada" aria-labelledby="titulo">
+      <div><p class="etiqueta">Hablemos del Alzheimer</p><h1 id="titulo">Informarnos hoy.<br><em>Acompañarnos mejor.</em></h1><p class="intro">Información clara sobre el Alzheimer y sus tratamientos, para acompañar a las personas y cuidar su autonomía cada día.</p><div class="acciones"><a class="boton" href="#noticias">Ver las noticias <span aria-hidden="true">↓</span></a><a class="enlace" href="#primeros-pasos">Conocer las señales →</a></div></div>
+      <figure class="foto"><img src="IMG_Pag-1.jpeg" alt="Un grupo diverso de personas mayores comparte un momento de cercanía y alegría." width="640" height="448" fetchpriority="high"><figcaption>La salud y la memoria nos importan a todos.</figcaption></figure>
+    </section>
+
+    <!-- NOTICIAS: se consultan automáticamente al abrir el archivo con conexión a internet. -->
+    <section class="noticias" id="noticias" aria-labelledby="titulo-noticias">
+      <div class="titular-seccion"><div><p class="etiqueta">Actualidad sobre el Alzheimer</p><h2 id="titulo-noticias">Noticias para estar al día</h2></div><button class="actualizar" type="button" id="actualizar"><span aria-hidden="true">↻</span> Actualizar</button></div>
+      <p class="noticias-intro">Tratamientos, medicamentos e investigación. Una selección que se consulta al abrir la página.</p>
+      <p class="estado" id="estado" role="status" aria-live="polite"></p>
+      <ul class="lista-noticias" id="lista-noticias" aria-label="Noticias destacadas con imágenes" aria-busy="false"></ul>
+      <details class="otros-medios"><summary>Más titulares · otros medios</summary><p class="fecha-otros" id="fecha-otros"></p><ul class="lista-otros" id="lista-otros" aria-label="Noticias de otros medios"></ul></details>
+      <div class="pie-noticias"><p>Titulares de medios externos, seleccionados automáticamente. Una noticia no confirma que un tratamiento sea eficaz o esté aprobado en tu país.</p><a class="enlace" id="mas-noticias" href="https://news.google.com/search?q=Alzheimer%20tratamientos%20medicamentos&amp;hl=es-419&amp;gl=US&amp;ceid=US%3Aes-419" target="_blank" rel="noopener noreferrer">Más noticias ↗</a></div>
+      <details class="como-funciona"><summary>Sobre esta selección</summary><p>Las tarjetas muestran noticias de <a href="https://www.rtve.es/temas/alzheimer/1060/" target="_blank" rel="noopener noreferrer">RTVE</a> con la imagen facilitada en su canal. Se filtran por Alzheimer, tratamientos e investigación, y se ordenan por fecha entre los resultados recibidos. «Más titulares» amplía la consulta a medios de Google Noticias en español mediante <a href="https://rss2json.com/" target="_blank" rel="noopener noreferrer">rss2json</a>. Estos medios no siempre proporcionan una fotografía.</p><p>Se buscan publicaciones de los últimos 90 días. Si no se puede actualizar o no llegan resultados, se conserva la selección anterior con sus fechas, aunque sea más antigua. Esta versión incluye una selección inicial y sus imágenes para abrirla también sin conexión. Los artículos completos se leen en la web del medio y necesitan internet.</p><p>El navegador guarda las noticias y las imágenes descargadas cuando permite el almacenamiento local. En navegación privada, si se borran los datos o se llena el espacio disponible, puede reaparecer la selección incluida con este archivo. Es una selección automática, no una revisión exhaustiva ni una evaluación médica. Las fotografías pertenecen a sus respectivos autores y medios. No se solicitan datos de salud.</p></details>
+      <noscript><p class="sin-js">Para consultar noticias automáticamente, activa JavaScript. También puedes abrir el enlace «Más noticias».</p></noscript>
+    </section>
+
+    <aside class="recordatorio"><p><strong>Un olvido aislado no significa Alzheimer.</strong> Si los cambios se repiten o afectan la vida diaria, conviene consultar a un profesional.</p></aside>
+
+    <!-- INFORMACIÓN ESENCIAL: se despliega solo si el visitante desea leer más. -->
+    <section class="esencial" id="primeros-pasos" aria-labelledby="titulo-pasos">
+      <div class="esencial-cabecera"><h2 id="titulo-pasos">Empezar por lo esencial</h2><p>Reconocer un cambio y pedir orientación puede ser el primer paso.</p></div>
+      <div class="guias">
+        <details class="guia"><summary>¿Qué señales merecen atención? <span aria-hidden="true">+</span></summary><div class="contenido-guia"><ul><li>Olvidar conversaciones recientes o repetir preguntas con frecuencia.</li><li>Desorientarse en lugares conocidos.</li><li>Tener nuevas dificultades para conversar o hacer tareas habituales.</li></ul><p>Observa qué ha cambiado respecto a lo habitual. Estos ejemplos no son un diagnóstico.</p><p class="fuente"><a href="https://www.alz.org/alzheimer-demencia/las-10-senales" target="_blank" rel="noopener noreferrer">Más información · Alzheimer's Association ↗</a></p></div></details>
+        <details class="guia"><summary>¿Qué puedo hacer ahora? <span aria-hidden="true">+</span></summary><div class="contenido-guia"><ol><li>Anota ejemplos y cuándo comenzaron.</li><li>Pide una consulta en tu centro de salud.</li><li>Lleva la lista de medicamentos y, si quieres, acude con alguien de confianza.</li></ol><p>Hay distintas causas para los problemas de memoria. Una evaluación ayuda a entender qué ocurre.</p><p class="fuente"><a href="https://www.nia.nih.gov/es/node/32081" target="_blank" rel="noopener noreferrer">Más información · Instituto Nacional sobre el Envejecimiento ↗</a></p></div></details>
+      </div>
+      <p class="orientacion">Si la confusión aparece repentinamente, busca atención médica urgente. <a href="https://www.nhs.uk/symptoms/confusion/" target="_blank" rel="noopener noreferrer">Fuente: NHS ↗</a></p>
+    </section>
+    <aside class="recursos"><p><strong>Información de referencia.</strong> Para conocer las opciones de tratamiento y sus límites, consulta fuentes sanitarias.</p><a href="https://www.nia.nih.gov/health/how-alzheimers-disease-treated" target="_blank" rel="noopener noreferrer">Tratamientos · NIA (en inglés) ↗</a></aside>
+  </main>
+  <!-- VENTANA DE CONTACTO: el destinatario se configura al principio del HTML. -->
+  <dialog class="contacto" id="dialogo-contacto" aria-labelledby="titulo-contacto" aria-describedby="intro-contacto">
+    <div class="contacto-encabezado"><div><p class="etiqueta">Estamos cerca</p><h2 id="titulo-contacto">Hablemos</h2></div><button class="cerrar-contacto" id="cerrar-contacto" type="button" aria-label="Cerrar ventana de contacto">×</button></div>
+    <p class="contacto-intro" id="intro-contacto">¿Tienes una sugerencia o quieres escribirnos? Nos encantará conocer tu mensaje.</p>
+    <p class="destinatario">Para: <a id="correo-destino"></a></p>
+    <form id="formulario-contacto">
+      <label for="contacto-nombre">Tu nombre <span>(opcional)</span></label>
+      <input id="contacto-nombre" name="nombre" type="text" autocomplete="name" maxlength="80" placeholder="Cómo te llamas" autofocus>
+      <label for="contacto-asunto">Asunto</label>
+      <input id="contacto-asunto" name="asunto" type="text" maxlength="120" required placeholder="¿Sobre qué quieres conversar?">
+      <label for="contacto-mensaje">Mensaje</label>
+      <textarea id="contacto-mensaje" name="mensaje" rows="4" maxlength="2000" required placeholder="Escribe aquí tu mensaje…"></textarea>
+      <p class="contacto-explicacion">Se abrirá tu aplicación de correo para que revises y envíes el mensaje.</p>
+      <div class="contacto-acciones"><button class="boton" id="preparar-correo" type="submit">Preparar correo <span aria-hidden="true">↗</span></button><button class="copiar-contacto" id="copiar-contacto" type="button">Copiar mensaje</button></div>
+      <p class="contacto-estado" id="contacto-estado" role="status" aria-live="polite"></p>
+      <div id="contacto-copia-manual" hidden><label for="contacto-texto-copia">Texto listo para copiar</label><textarea id="contacto-texto-copia" rows="5" readonly></textarea></div>
+    </form>
+    <p class="contacto-ayuda">Si no se abre tu correo, copia el mensaje y pégalo en el servicio de correo que utilices.</p>
+  </dialog>
+
+  <footer><div class="contenedor pie"><div><strong>Salud Interactiva</strong><p>Información educativa. No sustituye la evaluación ni el tratamiento médico.</p></div><div class="pie-enlaces"><button class="abrir-contacto" type="button" data-abrir-contacto aria-haspopup="dialog" aria-controls="dialogo-contacto">Contactar</button><a href="#inicio">Volver arriba ↑</a></div></div></footer>
+
+  <script>
+    'use strict';
+    /* NOTICIAS: RTVE aporta las fotografías de sus artículos; Google Noticias
+       amplía la selección de medios. Una consulta fallida nunca borra la anterior.
+       INICIAL contiene una selección real guardada con esta versión de la página. */
+    const INICIAL = {
+  "principal": {
+    "consultado": "2026-10-13T23:59:16.838949+00:00",
+    "items": [
+      {
+        "title": "Día Mundial del Alzhéimer: AFA Rioja pide un censo de enfermos y facilitar el acceso a los últimos tratamientos",
+        "link": "https://www.rtve.es/noticias/20260922/dia-alzheimer-afa-rioja-enfermos-tratamientos/17235453.shtml",
+        "pubDate": "Tue, 22 Sep 2026 21:46:27 GMT",
+        "image": "https://img.rtve.es/imagenes/dia-alzheimer-afa-rioja-enfermos-tratamientos/01790084936134.jpg",
+        "medio": "RTVE",
+        "foto": "noticias/rtve-1.jpg"
+      },
+      {
+        "title": "Una nueva perspectiva en la investigación sobre el alzhéimer: entender el papel de la mielina",
+        "link": "https://www.rtve.es/noticias/20260921/nueva-perspectiva-investigacion-alzheimer-entender-papel-mielina/17233251.shtml",
+        "pubDate": "Mon, 21 Sep 2026 15:19:08 GMT",
+        "image": "https://img.rtve.es/imagenes/nueva-perspectiva-investigacion-alzheimer-entender-papel-mielina/01789986348531.png",
+        "medio": "RTVE",
+        "foto": "noticias/rtve-2.jpg"
+      },
+      {
+        "title": "El Banco de Tejidos CIEN, donde los cerebros donados se convierten en investigación contra el Alzheimer",
+        "link": "https://www.rtve.es/noticias/20260921/banco-tejidos-cien-cerebros-donados-convierten-investigacion-alzheimer/17230511.shtml",
+        "pubDate": "Mon, 21 Sep 2026 07:13:43 GMT",
+        "image": "https://img.rtve.es/imagenes/banco-tejidos-cien-cerebros-donados-convierten-investigacion-alzheimer/01789995230079.jpg",
+        "medio": "RTVE",
+        "foto": "noticias/rtve-3.jpg"
+      }
+    ]
+  },
+  "otros": {
+    "consultado": "2026-10-13T23:59:16.838949+00:00",
+    "items": [
+      {
+        "title": "La Buena Noticia: Una proteína aporta nuevas claves sobre el Alzheimer - Diario Las Américas",
+        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdkEyM0UzdTQ5ZnZPQ0FabkcwWVNKcXczNzZvanhvb3lrNlhMZFlVaEVjdVBlSFJwY0RHc2VfTWQ0YXF0RmpHNzRuUk9IVFAxWWN6VmxKWi1OT1dmOEl3YVU4Z3NBMnc3Tm1VX2hJN283a1B0RXRSZHQ4YmNQT2xZNnQ3YlBVRm13bWFEUHdhWU5pRzVwM2RPZVlFU2U4T0czT2c1UlBlZGhDT1FyTmJmeFlZSdIBuAFBVV95cUxQR1EtcGktb3Nlel9xeENlYU1VNXg4emlTaXBvSWhMMk1VRUdoZXIxQTlxdlNneThpVGZ6SGs3TUZtWS1nWkpVN040MElydlFrREo5VDNZZThqY3JvRDZqOHF4REJldEJfOUR1UV9DdExaX3RvMUdmbFBFMzVaX0NsZk1qaGRyUHZnRVNYWEVfOFJYZXI2emk5ZEdmdExBNi0wV2duUldMVUhiWEM4aVZsRG1JYTF2RUdS?oc=5",
+        "pubDate": "2026-09-28 07:00:00"
+      },
+      {
+        "title": "El nuevo tratamiento que puede frenar el avance del Alzheimer ya se aplica en pacientes seleccionados - La Vanguardia",
+        "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNGxuOEFZS3AtUlI5NVEwWEV3WjVKLWJTY0FIRmlSc0t6LWhSb1ROTUFYbE5UcC1DUXEyaElyRDZPbW8wRXg3V1Nkc21fZWxPWWRPdGVhdlUtWXRYLVlydnJtRnl2enVGb09YVjZmeXdMSzhQYkpBQnlsaktod3VHRkF6cTR5NHRUNjFyZlRNVnAyc1UxZi1peXhEck1GWGwtd0J1T3ZxUE1HYkFheENZT0h3STVKOWdZbl9BdWRUVzZneTJKZ3F4LdIBzgFBVV95cUxPNU1NNERld0c5aXM4aGktd1FsZ2JrdHUwQ2tqcC12MElSbkNCbk9qN0Zib2Y5V18zYjRnUlRMSVZBNXItTk82dllyaXFtSnpvd0diaTY3ZmxXbjF4QzBiUXEyUXVNQ2NoWnBGZURZc2dIZkFGektkVHJpcUNjd3BWWWVLQmZVZEY2WEFGbVRwZWZIR0RiaGJlcnIydUMxNGZUZ3JBU3ZrZXVFSXprRXNtVXduYWtGVnFsU2xxcnRtT2RBV0hmQU1PNEZRTnRqZw?oc=5",
+        "pubDate": "2026-09-23 07:00:00"
+      },
+      {
+        "title": "El neurólogo que receta en España el primer fármaco capaz de ralentizar el alzhéimer: “No todo el mundo puede acceder por su elevado coste” - Infobae",
+        "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQckJtTS0zTVhLSGU0bVNNSHk2TmNzZ2tvMXhSTmZZLXp3d3M2Ql9lMXJmSE94TWJhYnpKcnpGcEpOTkdJNTRXOHh0S0xRZk95ZXp1ZTNLZ29ZbzllYlFtWk54eXk4NWNBS0VURG5pUGZQSU5vZ1BGS19jaFFPSmVrUUdyc0x2QktLNDJMWk9pZEM4bmZ5ZHJkYVlMWm1Ua1Jhekg3blpTeDJ0ckdiTzY4N1lzWGRHWnRqQldaNEJqMnR2dUVtdnlPZ2VnS1dlcE1zcTEzQlZadGE5emRjc0JzX0dWdjNHMzlSN25hZkJGRlBiVXJNWVVmMWF4NUlsU3FpdEZj0gGeAkFVX3lxTFBOa0JlekFrcVZpR1pncUQtZEtCMVFVSDFvMlpGYlFqZHFuLXRFaWNpY21NSmZ6a1NOdFVoaVJRU1ZTa2dwczQ3WGxReGppbU9ncW1mNUVfY3pKazJrc1djY1YtOEQ1a0wtYVg5elVaX3dWUGxWZHlOZ3FidVdrZG51cjhRLWNzUThLMG50U19sX2dpTF8wdHRQMTh2S24tZE5MZ3dXT2ZsVDNnSEFyOGxrTGFaOVFXaVBlNEt4SDBuZ3JFbTR6Q0JCcTVlM0MzY2JvVnNBZzJIRTZYZG13NXliWHBRMDBvYThCWTQ0X2E2b1FXOHN1clhRMlVaTVVOQUZzVXU0LVBySGtJNGcyamZaOGdHS3lEU01wMHVSU0E?oc=5",
+        "pubDate": "2026-09-22 07:00:00"
+      },
+      {
+        "title": "El recambio plasmático con reposición de albúmina ralentiza un 61% la progresión del Alzheimer leve y moderado - Farmacosalud",
+        "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxON01VX2xmemQ5VWhiQWFGUnp5NGhHUnZkS1U2VUkxNUdQLV9xcXNoWl9QNGNQam02R0pwZjFzaXo2ZVZTcXhzYXg0RjhQRlBsVHFhYlFENWhhSGl2d3ItTTEyWG56VVJJYUUyMkVudE5TVHBUcFc0OXpsYVpTS3lsMllnUTFVVkViU0RMRjRzaGJHdkNzMHhCMFF3NEk0eHBMenRLWVJlOHFSWVBBeXpRZVRPbHVZOXNEc1BfSkZJd2praUllQ0UxdzYzRXFCcDRP?oc=5",
+        "pubDate": "2026-09-21 07:00:00"
+      }
+    ]
+  }
+};
+    const CLAVE = 'salud-interactiva-noticias-v3';
+    const CONSULTA = 'Alzheimer (tratamiento OR fármaco OR medicamento OR lecanemab OR donanemab) when:90d';
+    const RSS_GOOGLE = 'https://news.google.com/rss/search?' + new URLSearchParams({q:CONSULTA,hl:'es-419',gl:'US',ceid:'US:es-419'});
+    const API_GOOGLE = 'https://api.rss2json.com/v1/api.json?' + new URLSearchParams({rss_url:RSS_GOOGLE});
+    const RSS_RTVE = 'https://www.rtve.es/rss/alzheimer/1060.rss';
+    const estado = document.getElementById('estado');
+    const lista = document.getElementById('lista-noticias');
+    const listaOtros = document.getElementById('lista-otros');
+    const actualizar = document.getElementById('actualizar');
+    let consultando = false;
+    let memoria = leerGuardado();
+
+    function texto(value, limite=450) {
+      return typeof value==='string' ? value.replace(/[\u0000-\u001f]/g,' ').trim().slice(0,limite) : '';
+    }
+    function urlSegura(value, hosts) {
+      try { const u=new URL(value);return u.protocol==='https:' && hosts.includes(u.hostname) && !u.username && !u.password ? u.href : ''; } catch { return ''; }
+    }
+    function fechaNoticia(value) {
+      if (typeof value!=='string') return NaN;
+      return Date.parse(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(value) ? value.replace(' ','T')+'Z' : value);
+    }
+    function fotoGuardada(value) {
+      if (typeof value!=='string') return '';
+      if (/^noticias\/rtve-[123]\.jpg$/.test(value)) return value;
+      return value.length<=230000 && /^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(value) ? value : '';
+    }
+    function normalizar(items, tipo, recientes=false) {
+      const vistos=new Set(), ahora=Date.now();
+      return (Array.isArray(items)?items:[]).slice(0,100).map(item=>{
+        if (!item || typeof item!=='object') return null;
+        const title=texto(item.title), fecha=fechaNoticia(item.pubDate);
+        const link=urlSegura(item.link,tipo==='rtve'?['www.rtve.es']:['news.google.com']);
+        if (!title || !link || !Number.isFinite(fecha) || fecha>ahora+86400000 || (recientes && fecha<ahora-90*86400000)) return null;
+        if (tipo==='rtve' && (!new URL(link).pathname.startsWith('/noticias/') || !/alzh[eé]?imer/i.test(title) || !/tratamient|f[aá]rmac|medicament|investig|terapia|diagn[oó]stic|mielina/i.test(title))) return null;
+        const separador=tipo==='google'?title.lastIndexOf(' - '):-1;
+        const titulo=separador>0?title.slice(0,separador):title;
+        const medio=tipo==='rtve'?'RTVE':(separador>0?title.slice(separador+3):'Google Noticias');
+        const clave=titulo.toLocaleLowerCase('es').replace(/[^\p{L}\p{N}]/gu,'');
+        if (vistos.has(clave)) return null;vistos.add(clave);
+        return {title,link,pubDate:new Date(fecha).toISOString(),titulo,medio,fecha,clave,
+          image:tipo==='rtve'?urlSegura(item.image,['img.rtve.es']):'',foto:tipo==='rtve'?fotoGuardada(item.foto):''};
+      }).filter(Boolean).sort((a,b)=>b.fecha-a.fecha).slice(0,tipo==='rtve'?3:4);
+    }
+    function validarGrupo(grupo,tipo) {
+      if (!grupo || !Number.isFinite(Date.parse(grupo.consultado))) return null;
+      const items=normalizar(grupo.items,tipo);
+      return items.length ? {consultado:grupo.consultado,items} : null;
+    }
+    function leerGuardado() {
+      let dato=null,anterior=null;
+      try {dato=JSON.parse(localStorage.getItem(CLAVE));anterior=JSON.parse(localStorage.getItem('salud-interactiva-noticias-v2'));} catch {}
+      return {principal:validarGrupo(dato?.principal,'rtve') || validarGrupo(INICIAL.principal,'rtve'),
+        otros:validarGrupo(dato?.otros,'google') || validarGrupo(anterior,'google') || validarGrupo(INICIAL.otros,'google')};
+    }
+    function guardar() {
+      try {localStorage.setItem(CLAVE,JSON.stringify(memoria));} catch {
+        // Con cuota llena, se conserva la copia persistida anterior y la sesión actual.
+      }
+    }
+    function fechaCorta(fecha) {return new Intl.DateTimeFormat('es',{day:'numeric',month:'short',year:'numeric'}).format(new Date(fecha));}
+    function momento(fecha) {return new Intl.DateTimeFormat('es',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(fecha));}
+    function nodo(tag,clase,contenido) {const n=document.createElement(tag);if(clase)n.className=clase;if(contenido)n.textContent=contenido;return n;}
+    function enlace(item) {const a=nodo('a');a.href=item.link;a.target='_blank';a.rel='noopener noreferrer';return a;}
+    function metadatos(item,nueva) {
+      const p=nodo('p','meta'), t=nodo('time','',fechaCorta(item.fecha));t.dateTime=item.pubDate;
+      p.append(nodo('span','',item.medio),nodo('span','','·'),t);
+      if(nueva)p.append(nodo('span','nueva','Nueva'));return p;
+    }
+    function mostrarPrincipal(nuevas=new Set()) {
+      lista.replaceChildren();
+      memoria.principal.items.forEach(item=>{
+        const li=nodo('li','noticia'),figure=nodo('figure','noticia-figura');
+        const neutra=nodo('div','imagen-neutra','Actualidad · RTVE');neutra.setAttribute('aria-hidden','true');
+        const origen=item.foto||item.image;
+        if(origen){
+          const img=nodo('img','noticia-foto');img.alt='Imagen publicada por RTVE con esta noticia';img.src=origen;img.decoding='async';img.referrerPolicy='no-referrer';
+          img.addEventListener('error',()=>{img.replaceWith(neutra);figure.querySelector('figcaption')?.remove();},{once:true});
+          figure.append(img,nodo('figcaption','','Imagen del artículo · RTVE'));
+        } else figure.append(neutra);
+        const contenido=nodo('div','noticia-contenido'), h=nodo('h3'),a=enlace(item);a.textContent=item.titulo;h.append(a);
+        const leer=enlace(item);leer.className='leer-noticia';leer.textContent='Leer en RTVE ↗';leer.setAttribute('aria-label','Leer en RTVE: '+item.titulo);
+        contenido.append(metadatos(item,nuevas.has(item.clave)),h,leer);li.append(figure,contenido);lista.append(li);
+      });
+      estado.textContent='Selección guardada · '+momento(memoria.principal.consultado);
+    }
+    function mostrarOtros() {
+      listaOtros.replaceChildren();
+      memoria.otros.items.forEach(item=>{const li=nodo('li','titular-otro'),h=nodo('h3'),a=enlace(item);a.textContent=item.titulo+' ↗';h.append(a);li.append(metadatos(item,false),h);listaOtros.append(li);});
+      document.getElementById('fecha-otros').textContent='Última consulta de estos titulares · '+momento(memoria.otros.consultado);
+    }
+    async function solicitar(url,tipo,plazo=14000) {
+      const control=new AbortController(),timer=setTimeout(()=>control.abort(),plazo);
+      try {
+        const r=await fetch(url,{signal:control.signal,credentials:'omit',referrerPolicy:'no-referrer'});
+        if(!r.ok)throw new Error('Respuesta no disponible');
+        if(tipo==='imagen') {const b=await r.blob();if(b.size>6000000 || !/^image\/(jpeg|png|webp)/.test(b.type))throw new Error('Formato no válido');return b;}
+        return tipo==='json'?await r.json():await r.text();
+      } finally {clearTimeout(timer);}
+    }
+    function leerRTVE(xml) {
+      const doc=new DOMParser().parseFromString(xml,'application/xml');
+      if(doc.querySelector('parsererror'))throw new Error('Canal no válido');
+      return normalizar(Array.from(doc.querySelectorAll('channel > item')).map(x=>({title:x.querySelector('title')?.textContent,link:x.querySelector('link')?.textContent,pubDate:x.querySelector('pubDate')?.textContent,image:x.querySelector('enclosure')?.getAttribute('url')})),'rtve',true);
+    }
+    async function conservarFoto(item) {
+      const anterior=memoria.principal.items.find(x=>x.link===item.link && x.image===item.image && x.foto)
+        || INICIAL.principal.items.find(x=>x.link===item.link && x.image===item.image && x.foto);
+      if(anterior)return {...item,foto:anterior.foto};
+      if(!item.image)return item;
+      let bitmap;
+      try {
+        const blob=await solicitar(item.image,'imagen',9000);
+        bitmap=await createImageBitmap(blob);
+        const canvas=document.createElement('canvas');const escala=Math.min(1,760/bitmap.width,550/bitmap.height);
+        canvas.width=Math.max(1,Math.round(bitmap.width*escala));canvas.height=Math.max(1,Math.round(bitmap.height*escala));
+        canvas.getContext('2d').drawImage(bitmap,0,0,canvas.width,canvas.height);
+        const foto=fotoGuardada(canvas.toDataURL('image/jpeg',.74));return {...item,foto};
+      } catch {return item;} finally {bitmap?.close();}
+    }
+    async function actualizarPrincipal() {
+      const recibidas=leerRTVE(await solicitar(RSS_RTVE,'xml'));
+      if(!recibidas.length)return; // Nunca sustituir la selección guardada por una vacía.
+      const anteriores=new Set(memoria.principal.items.map(x=>x.clave));
+      const items=await Promise.all(recibidas.map(conservarFoto));
+      memoria.principal={consultado:new Date().toISOString(),items};guardar();
+      mostrarPrincipal(new Set(items.filter(x=>!anteriores.has(x.clave)).map(x=>x.clave)));
+      estado.textContent='Última consulta · '+momento(memoria.principal.consultado);
+    }
+    async function actualizarOtros() {
+      const d=await solicitar(API_GOOGLE,'json');
+      if(d.status!=='ok')throw new Error('Canal no válido');
+      const items=normalizar(d.items,'google',true);if(!items.length)return;
+      memoria.otros={consultado:new Date().toISOString(),items};guardar();mostrarOtros();
+    }
+    async function consultarNoticias() {
+      if(consultando || navigator.onLine===false)return;
+      consultando=true;actualizar.disabled=true;actualizar.textContent='Consultando…';
+      lista.setAttribute('aria-busy','true');
+      try {await Promise.allSettled([actualizarPrincipal(),actualizarOtros()]);}
+      finally {consultando=false;actualizar.disabled=false;actualizar.textContent='↻ Actualizar';lista.setAttribute('aria-busy','false');}
+    }
+    actualizar.addEventListener('click',consultarNoticias);
+    window.addEventListener('online',consultarNoticias);
+    document.getElementById('letra').addEventListener('click',event=>{
+      const grande=document.documentElement.classList.toggle('letra-grande');
+      event.currentTarget.setAttribute('aria-pressed',String(grande));
+      event.currentTarget.setAttribute('aria-label',grande?'Restablecer tamaño de letra':'Aumentar tamaño de letra');
+    });
+    mostrarPrincipal();mostrarOtros();consultarNoticias();
+
+  </script>
+  <script>
+    /* El formulario prepara el correo. No envía mensajes ni guarda sus campos. */
+    function prepararDatosContacto(correo, nombre, asunto, mensaje) {
+      if (typeof correo !== 'string' || !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(correo.trim())) return null;
+      const destinatario = correo.trim();
+      const titulo = String(asunto || '').replace(/[\r\n]/g, ' ').trim().slice(0,120);
+      const cuerpo = String(mensaje || '').trim().slice(0,2000);
+      const firma = String(nombre || '').replace(/[\r\n]/g,' ').trim().slice(0,80);
+      if (!titulo || !cuerpo) return null;
+      const asuntoFinal = 'Salud Interactiva · ' + titulo;
+      const mensajeFinal = cuerpo + (firma ? '\r\n\r\nNombre: ' + firma : '');
+      const direccion = destinatario.split('@').map(encodeURIComponent).join('@');
+      return {
+        url:'mailto:' + direccion + '?subject=' + encodeURIComponent(asuntoFinal) + '&body=' + encodeURIComponent(mensajeFinal),
+        copia:'Para: ' + destinatario + '\nAsunto: ' + asuntoFinal + '\n\n' + mensajeFinal
+      };
+    }
+    (() => {
+      const dialogo = document.getElementById('dialogo-contacto');
+      const formulario = document.getElementById('formulario-contacto');
+      const nombre = document.getElementById('contacto-nombre');
+      const asunto = document.getElementById('contacto-asunto');
+      const mensaje = document.getElementById('contacto-mensaje');
+      const estadoContacto = document.getElementById('contacto-estado');
+      const copiaManual = document.getElementById('contacto-copia-manual');
+      const textoCopia = document.getElementById('contacto-texto-copia');
+      const destinatario = document.getElementById('correo-destino');
+      let origen;
+      const correoValido = prepararDatosContacto(CORREO_CONTACTO,'','Comprobación','Comprobación');
+      if (correoValido) {
+        destinatario.textContent = CORREO_CONTACTO.trim();
+        destinatario.href = correoValido.url.split('?')[0];
+      } else {
+        destinatario.textContent = 'Correo de contacto pendiente de configurar';
+        document.getElementById('preparar-correo').disabled = true;
+        document.getElementById('copiar-contacto').disabled = true;
+      }
+      document.querySelectorAll('[data-abrir-contacto]').forEach(boton => boton.addEventListener('click', () => {
+        origen = boton;
+        estadoContacto.textContent = '';
+        copiaManual.hidden = true;
+        dialogo.showModal();
+        document.body.classList.add('contacto-abierto');
+      }));
+      document.getElementById('cerrar-contacto').addEventListener('click', () => dialogo.close());
+      dialogo.addEventListener('close', () => {document.body.classList.remove('contacto-abierto');origen?.focus();});
+      [asunto,mensaje].forEach(campo => campo.addEventListener('input', () => campo.setCustomValidity('')));
+      function datosDelFormulario() {
+        asunto.setCustomValidity(asunto.value.trim() ? '' : 'Escribe el asunto del correo.');
+        mensaje.setCustomValidity(mensaje.value.trim() ? '' : 'Escribe tu mensaje.');
+        if (!formulario.reportValidity()) return null;
+        return prepararDatosContacto(CORREO_CONTACTO,nombre.value,asunto.value,mensaje.value);
+      }
+      formulario.addEventListener('submit', event => {
+        event.preventDefault();
+        const datos = datosDelFormulario();
+        if (!datos) return;
+        estadoContacto.textContent = 'Tu mensaje está preparado. Revisa y envía el correo en la aplicación que se abra.';
+        window.location.href = datos.url;
+      });
+      document.getElementById('copiar-contacto').addEventListener('click', async () => {
+        const datos = datosDelFormulario();
+        if (!datos) return;
+        try {
+          await navigator.clipboard.writeText(datos.copia);
+          copiaManual.hidden = true;
+          estadoContacto.textContent = 'Mensaje copiado. Puedes pegarlo en tu correo.';
+        } catch {
+          textoCopia.value = datos.copia;
+          copiaManual.hidden = false;
+          textoCopia.focus();textoCopia.select();
+          estadoContacto.textContent = 'El texto está seleccionado. Cópialo y pégalo en tu correo.';
+        }
+      });
+    })();
+
+  </script>
+</body>
+</html>
